@@ -1,4 +1,8 @@
+import 'package:eshop/views/profile/edit_profile_page.dart';
+import 'package:eshop/views/profile/payment_details.dart';
+import 'package:eshop/views/profile/setting_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -13,7 +17,11 @@ class ProfilePage extends StatelessWidget {
         ),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.edit_outlined))
+          IconButton(
+              onPressed: () {
+                Get.to(() => EditProfilePage());
+              },
+              icon: const Icon(Icons.edit_outlined))
         ],
       ),
       body: Padding(
@@ -23,23 +31,30 @@ class ProfilePage extends StatelessWidget {
             children: [
               const CircleAvatar(
                 radius: 50,
+                backgroundImage: NetworkImage(
+                    "https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600nw-1714666150.jpg"),
               ),
               const Text(
-                "name",
+                "John doe",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
-              const Text("@Username"),
+              const Text("@doe"),
               const Text("info@gmail.com"),
               const SizedBox(
                 height: 20,
               ),
               customListTile(
-                  context, "Your Favourites", Icons.favorite_outline, () {}),
-              customListTile(context, "Payment",
-                  Icons.account_balance_wallet_outlined, () {}),
+                  context, "Track Order", Icons.delivery_dining, () {}),
+              customListTile(
+                  context, "Payment", Icons.account_balance_wallet_outlined,
+                  () {
+                Get.to(() => const PaymentPage());
+              }),
               customListTile(context, "Refer A Friend", Icons.people, () {}),
               customListTile(context, "Promotions", Icons.local_offer, () {}),
-              customListTile(context, "Settings", Icons.settings, () {}),
+              customListTile(context, "Settings", Icons.settings, () {
+                 Get.to(() => AppSettingsPage());
+              }),
               customListTile(context, "Log Out", Icons.logout, () {}),
             ],
           ),
@@ -51,9 +66,12 @@ class ProfilePage extends StatelessWidget {
   ListTile customListTile(
       BuildContext context, String name, IconData icon, Function() function) {
     return ListTile(
-      leading: Icon(
-        icon,
-        color: Theme.of(context).colorScheme.primary,
+      leading: CircleAvatar(
+         backgroundColor: Colors.blueGrey[50],
+        child: Icon(
+          icon,
+          color: Theme.of(context).colorScheme.primary,
+        ),
       ),
       title: Text(name),
       onTap: function,

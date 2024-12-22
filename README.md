@@ -4,7 +4,23 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## Home page
+![alt text](<Screenshot from 2024-12-22 10-35-54.png>)                              ![alt text](<Screenshot from 2024-12-22 10-24-56.png>)
+
+## Explore page
+![alt text](<Screenshot from 2024-12-22 10-09-40.png>)                              ![alt text](<Screenshot from 2024-12-22 10-25-18.png>)
+
+## product details
+![alt text](<Screenshot from 2024-12-22 10-11-20.png>)                              ![alt text](<Screenshot from 2024-12-22 10-25-46.png>)
+
+## cart page 
+![alt text](<Screenshot from 2024-12-22 10-11-32.png>)                               ![alt text](<Screenshot from 2024-12-22 10-25-07.png>)
+
+## profile page
+![alt text](<Screenshot from 2024-12-22 10-25-26.png>)
+
+## Setting page
+![alt text](<Screenshot from 2024-12-22 10-12-08.png>)
 
 A few resources to get you started if this is your first Flutter project:
 
